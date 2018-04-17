@@ -14,7 +14,7 @@ for idxDS = 1:length(DatasetList)
 		curData     =   imList(idxImage).name;
         curName     =   curData(1:end - length('.mat'));
         load(fullfile(imageDir,curData),'I7');
-        X = I7
+        X = I7;
         outfile = sprintf('%s/%s/%s.mat',root,Dataset,curName);
         save(outfile,'X');	
 	end
