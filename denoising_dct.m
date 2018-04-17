@@ -29,7 +29,7 @@ for idxR = 1: length(RRList)
 			end
 			for i = 1:length(NoiseLevelList)
                 sigma = NoiseLevelList(i);
-                load(fullfile(noisyDir,sprintf('sigma%d.mat'),sigma), 'noisy','psnr_noisy');
+                load(fullfile(noisyDir,sprintf('sigma%d.mat',sigma)), 'noisy','psnr_noisy');
                 [Xr,output] = denoiseImageDCT(noisy, sigma, K); % Xr: reconstructed Im, output contains the dictionary
                 psnr_Xr = PSNR(Xr - X);
                 Dict = output.D;
