@@ -6,7 +6,8 @@ NoiseLevelList 	=	[5, 10, 15, 25, 50];
 
 addpath('KSVD_Matlab_ToolBox');
 bb = 8; % block size
-RRList = [1, 2, 4, 8]; % redundancy factor
+% RRList = [1, 2, 4, 8]; % redundancy factor
+RRList = [4];
 
 method = 'dct';
 
@@ -34,8 +35,9 @@ for idxR = 1: length(RRList)
                 [Xr,output] = denoiseImageDCT(noisy, sigma, K); % Xr: reconstructed Im, output contains the dictionary
                 psnr_Xr = PSNR(Xr - X);
                 Dict = output.D;
-                outfile = sprintf('%s/sigma%d_dict%d.mat',char(resultImDir),sigma,K);
-                save(outfile,'Dict','Xr','psnr_Xr','psnr_noisy');
+                DictSize = K;
+                outfile = sprintf('%s/sigma%d_dict%d.mat',char(resultImDir),sigma,DictSize);
+                save(outfile,'Dict','Xr','psnr_Xr','psnr_noisy','DictSize');
 
             end
         end
