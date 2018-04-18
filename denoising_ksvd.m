@@ -19,7 +19,7 @@ for idxR = 1: length(RRList)
 		imList = dir(fullfile(imageDir, '*.mat'));
 		numImage = numel(imList);
 
-		for idxImage = 1:numImage
+		for idxImage = 2:numImage
         	curData     =   imList(idxImage).name;
             curName     =   curData(1:end - length('.mat'));
             load(fullfile(imageDir,curData),'X');
