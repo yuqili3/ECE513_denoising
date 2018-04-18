@@ -6,8 +6,8 @@ NoiseLevelList 	=	[5, 10, 15, 25, 50];
 
 addpath('KSVD_Matlab_ToolBox');
 bb = 8; % block size
-% RRList = [1, 2, 4, 8]; % redundancy factor
-RRList = [4];
+RRList = [1, 2, 8]; % redundancy factor
+% RRList = [4];
 
 method = 'dct';
 
