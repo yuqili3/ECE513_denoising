@@ -26,7 +26,7 @@ for idxR = 1: length(RRList)
             load(fullfile(imageDir,curData),'X');
             noisyDir = fullfile(imageDir,curName);
             resultImDir = fullfile(root,strcat(Dataset,'_',method),curName);
-			if ~exist(method,'dir')
+			if ~exist(resultImDir,'dir')
 				mkdir(resultImDir);
 			end
 			for i = 1:length(NoiseLevelList)
