@@ -12,7 +12,7 @@ for idxDS = 1:length(DatasetList)
 	numImage = numel(imList);
 	for idxImage = 1:numImage
 		curData     =   imList(idxImage).name;
-                curName     =   curData(1:end - length('.mat'));
+                curName     =   curData(1:end - length('.mat'))
                 load(fullfile(imageDir,curData),'X');
                 noisyDir = fullfile(imageDir,curName);
                 mkdir(noisyDir)
