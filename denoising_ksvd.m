@@ -10,7 +10,8 @@ RRList = [4]; % redundancy factor
 
 method = 'ksvd';
 
-for idxR = 1: length(RRList)
+% for idxR = 1: length(RRList)
+for idxR = 1:1
 	RR = RRList(idxR);
 	K =RR*bb^2; % number of atoms in the dictionary
 	for idxDS = 1:length(DatasetList)
@@ -19,7 +20,7 @@ for idxR = 1: length(RRList)
 		imList = dir(fullfile(imageDir, '*.mat'));
 		numImage = numel(imList);
 
-		for idxImage = 2:numImage
+		for idxImage = 1:numImage
         	curData     =   imList(idxImage).name;
             curName     =   curData(1:end - length('.mat'));
             load(fullfile(imageDir,curData),'X');
